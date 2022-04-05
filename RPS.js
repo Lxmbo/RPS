@@ -2,8 +2,7 @@
          //calls our main function to start the game
     
         /*function game(){
-            let playerScore =0;
-            let computerScore =0;                   
+                               
             for(i=0;i<5;i++){ //loops playRound 5 times
             
                if(i===4){
@@ -16,25 +15,42 @@
                     }else{
                         alert("YOU'VE LOST")
                     }
-                }*/
+                }
+            */
             
-            /*const rock = document.querySelector('#rock');
+            let playerScore =0;
+            let computerScore =0;
+
+
+            const rock = document.querySelector('#rock');
             const paper = document.querySelector('#paper');
             const scissors = document.querySelector('#scissors');
             rock.addEventListener('click',()=>{playRound('rock')})
             paper.addEventListener('click',()=>{playRound('paper')})
             scissors.addEventListener('click',()=>{playRound('scissors')})
             console.log(playerScore)
-            console.log(computerScore)*/
+            console.log(computerScore)
 
+            
             const container = document.querySelector('body');
             const scoreContainer = document.createElement('div');
             scoreContainer.classList.add('scoreContainer');
-            scoreContainer.textContent = 'This is content';
-            scoreContainer.style.cssText = 'border:solid;border-color:black;background-color:'
+            
             container.appendChild(scoreContainer)
+            scoreContainer.textContent =`Player Score:  ${playerScore} || Computer Score: ${computerScore}`
 
-            /*function playRound(playerInput){               
+
+            function playRound(playerInput){        
+                if (playerScore===5 || computerScore === 5){
+                    if (playerScore === 5){
+                        alert('Player Wins!!!')
+                        return
+                    }else{
+                        alert('Computer Wins!!!')
+                        return
+                    }
+                }else
+                
                 console.log(playerInput)
                 let playerSelection =0;
                 if (playerInput == ""||null){ //no entry 
@@ -72,6 +88,16 @@
                     playerScore++;
                 }
                 
+                scoreContainer.textContent = `Player Score: ${playerScore} || Computer Score: ${computerScore}`;
+                if (playerScore === 5 || computerScore === 5){
+                    if(playerScore>computerScore){
+                        alert('PLAYER WINS')
+                        return
+                    }else{
+                        alert('COMPUTER WINS!!')
+                        return
+                    }
                 
-        }
-*/
+                
+            }else{}
+            }   
